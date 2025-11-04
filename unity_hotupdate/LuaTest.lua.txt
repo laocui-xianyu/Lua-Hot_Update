@@ -5,7 +5,8 @@ if canvas ~= nil then
     -- 通过transform查找子对象（支持未激活状态）
     local panelTransform = canvas.transform:Find("Panel")
     if panelTransform ~= nil then
-        local panel = panelTransform.gameObject
+        local panel = panelTransform.gameObject:GetComponent(NoticeUI)
+        panel.text.text = "这是一个糟糕的晚上！"
     else
         print("未找到Panel子对象")
     end
