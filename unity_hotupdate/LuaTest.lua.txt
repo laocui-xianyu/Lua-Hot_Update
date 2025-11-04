@@ -1,7 +1,14 @@
 print("进入LuaTest")
 
-local noticeui = CS.UnityEngine.GameObject.Find("NoticeUI"):GetComponent("NoticeUI")
-
-if noticeui then
-    noticeui.text.text = "这是一个糟糕的夜晚！"
+local panel = CS.UnityEngine.GameObject.Find("Canvas/Panel")
+if panel then
+    local noticeui = panel:GetComponent("NoticeUI")
+    if noticeui and noticeui.text then
+        noticeui.text.text = "这是一个糟糕的夜晚！"
+        print("成功修改文本内容")
+    else
+        print("NoticeUI组件或text属性为nil")
+    end
+else
+    print("找不到Panel对象")
 end
