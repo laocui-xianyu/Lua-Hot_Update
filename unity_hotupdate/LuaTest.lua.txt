@@ -6,8 +6,6 @@ if canvas ~= nil then
     local panelTransform = canvas.transform:Find("Panel")
     if panelTransform ~= nil then
         local panel = panelTransform.gameObject
-        -- 找到后可激活它
-        panel:SetActive(true)
     else
         print("未找到Panel子对象")
     end
