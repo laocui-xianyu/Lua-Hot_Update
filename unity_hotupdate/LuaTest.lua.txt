@@ -1,14 +1,14 @@
 print("进入LuaTest")
 
-local panel = CS.UnityEngine.GameObject.Find("Canvas/Panel")
-if panel then
-    local noticeui = panel:GetComponent("NoticeUI")
-    if noticeui and noticeui.text then
-        noticeui.text.text = "这是一个糟糕的夜晚！"
-        print("成功修改文本内容")
+local canvas = CS.UnityEngine.GameObject.Find("Canvas")
+if canvas ~= nil then
+    -- 通过transform查找子对象（支持未激活状态）
+    local panelTransform = canvas.transform:Find("Panel")
+    if panelTransform ~= nil then
+        local panel = panelTransform.gameObject
+        -- 找到后可激活它
+        panel:SetActive(true)
     else
-        print("NoticeUI组件或text属性为nil")
+        print("未找到Panel子对象")
     end
-else
-    print("找不到Panel对象")
 end
