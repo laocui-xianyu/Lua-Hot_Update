@@ -1,0 +1,3 @@
+print("进入LuaMain")
+
+require("LuaTest")
