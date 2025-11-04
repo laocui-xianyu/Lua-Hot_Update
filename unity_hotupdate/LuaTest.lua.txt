@@ -1,5 +1,7 @@
 print("进入LuaTest")
 
-xlua.hotfix(CS.NoticeUI,"OnEnable", function(self)
-    self.text.text = "这是一个糟糕的晚上！"
-end)
+local noticeui = CS.UnityEngine.GameObject.Find("NoticeUI"):GetComponent("NoticeUI")
+
+if noticeui then
+    noticeui.text.text = "这是一个糟糕的夜晚！"
+end
