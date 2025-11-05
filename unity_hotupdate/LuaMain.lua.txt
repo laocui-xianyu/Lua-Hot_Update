@@ -10,4 +10,3 @@ if canvas then
         print("未找到Panel子对象")
     end
 end
-
