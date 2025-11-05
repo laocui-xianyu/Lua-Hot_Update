@@ -5,8 +5,9 @@ if canvas then
     local panelTransform = canvas.transform:Find("Panel")
     if panelTransform ~= nil then
         local panel = panelTransform.gameObject:GetComponent("NoticeUI")
-        panel:UpdateText("这是一个糟糕的夜晚！")
+        panel:UpdateText("这是一个美丽的黄昏！")
     else
         print("未找到Panel子对象")
     end
 end
+
